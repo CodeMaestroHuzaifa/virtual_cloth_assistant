@@ -17,12 +17,12 @@ def resize_img(path):
 for path in os.listdir('/content/inputs/test/cloth/'):
     resize_img(f'/content/inputs/test/cloth/{path}')
 
-os.chdir('/content/virtual_clothes_try_on_assistant')
+os.chdir('/content/virtual_cloth_assistant/virtual_clothes_try_on_assistant-main')
 os.system("python cloth-mask.py")
-os.chdir('/content')
+os.chdir('/content/virtual_cloth_assistant')
 os.system(
-    "python3 /content/Self-Correction-Human-Parsing/simple_extractor.py --dataset 'lip' --model-restore '/content/checkpoints/exp-schp-201908261155-lip.pth' --input-dir '/content/inputs/test/image' --output-dir '/content/inputs/test/image-parse'")
-os.chdir('/content')
+    "python3 /content/virtual_cloth_assistant/Self-Correction-Human-Parsing/simple_extractor.py --dataset 'lip' --model-restore '/content/virtual_cloth_assistant/Self-Correction-Human-Parsing/checkpoints/final.pth' --input-dir '/content/inputs/test/image' --output-dir '/content/inputs/test/image-parse'")
+os.chdir('/content/virtual_cloth_assistant')
 
 mp_pose = mp.solutions.pose
 pose = mp_pose.Pose(static_image_mode=True, min_detection_confidence=0.5)
@@ -79,4 +79,4 @@ with open('/content/inputs/test_pairs.txt', 'w') as file:
 
 # making predictions
 os.system(
-    "python /content/virtual_clothes_try_on_assistant/test.py --name output --dataset_dir /content/inputs --checkpoint_dir /content/virtual_clothes_try_on_assistant/checkpoints --save_dir /content/")
+    "python /content/virtual_cloth_assistant/virtual_clothes_try_on_assistant-main/test.py --name output --dataset_dir /content/inputs --checkpoint_dir /content/virtual_clothes_try_on_assistant-main/checkpoints --save_dir /content/")
