@@ -25,7 +25,7 @@ def get_opt():
     parser.add_argument('--dataset_dir', type=str, default='/content/inputs')
     parser.add_argument('--dataset_mode', type=str, default='test')
     parser.add_argument('--dataset_list', type=str, default='test_pairs.txt')
-    parser.add_argument('--checkpoint_dir', type=str, default='/content/checkpoints')
+    parser.add_argument('--checkpoint_dir', type=str, default='/content/virtual_cloth_assistant/virtual_clothes_try_on_assistant-main/checkpoints')
     parser.add_argument('--save_dir', type=str, default='/content/image_seg')
 
     parser.add_argument('--display_freq', type=int, default=1)
@@ -109,7 +109,7 @@ def test(opt, seg, gmm, alias):
                 for label in labels[j][1]:
                     parse[:, j] += parse_old[:, label]
 
-            save_dir = /content/image_seg'
+            save_dir = '/content/image_seg'
             if not os.path.exists(save_dir):
                 os.makedirs(save_dir)
 
