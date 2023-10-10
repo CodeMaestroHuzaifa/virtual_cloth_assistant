@@ -68,7 +68,7 @@ for image_path in os.listdir(input_image_dir):
     image_21_channels = np.zeros((image_rgb.shape[0], image_rgb.shape[1], 21))
     image_21_channels[:, :, :3] = image_rgb
 
-model_image = os.listdir('/content/inputs/test/model')
+model_image = os.listdir('/content/inputs/test/image')
 cloth_image = os.listdir('/content/inputs/test/cloth')
 
 pairs = zip(model_image, cloth_image)
