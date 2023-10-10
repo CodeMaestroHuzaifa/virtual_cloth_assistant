@@ -13,7 +13,7 @@ device = 'cuda'
 
 image_dir = '/content/inputs/test/cloth'
 result_dir = '/content/inputs/test/cloth-mask'
-checkpoint_path = '/content/checkpoints/cloth_segm_u2net_latest.pth'
+checkpoint_path = '/content/virtual_cloth_assistant/virtual_clothes_try_on_assistant-main/checkpoints/cloth_segm_u2net_latest.pth'
 
 
 def load_checkpoint_mgpu(model, checkpoint_path):
