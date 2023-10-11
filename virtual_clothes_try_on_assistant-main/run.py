@@ -79,4 +79,4 @@ with open('/content/inputs/test_pairs.txt', 'w') as file:
 
 # making predictions
 os.system(
-    "python /content/virtual_cloth_assistant/virtual_clothes_try_on_assistant-main/test.py --name output --dataset_dir /content/inputs --checkpoint_dir /content/virtual_clothes_try_on_assistant-main/checkpoints --save_dir /content/")
+    "python /content/virtual_cloth_assistant/virtual_clothes_try_on_assistant-main/test.py --name output --dataset_dir /content/inputs --checkpoint_dir /content/virtual_cloth_assistant/virtual_clothes_try_on_assistant-main/checkpoints --save_dir /content/")
